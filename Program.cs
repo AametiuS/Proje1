@@ -1,11 +1,11 @@
-﻿Random random1 = new Random();
-Random random2 = new Random();
-Random random3 = new Random();
-int harflerIcınRastgeleSayi1 = random1.Next(1, 6);
-int harflerIcınRastgeleSayi2 = random1.Next(1, 6);
-int harflerIcınRastgeleSayi3 = random1.Next(1, 6);
-int harflerIcınRastgeleSayi4 = random1.Next(1, 6);
-int harflerIcınRastgeleSayi5 = random1.Next(1, 6);
+﻿using System.Security.Cryptography;
+
+Random rnd = new Random();
+int harflerIcınRastgeleSayi1 = rnd.Next(1, 6);
+int harflerIcınRastgeleSayi2 = rnd.Next(1, 6);
+int harflerIcınRastgeleSayi3 = rnd.Next(1, 6);
+int harflerIcınRastgeleSayi4 = rnd.Next(1, 6);
+int harflerIcınRastgeleSayi5 = rnd.Next(1, 6);
 
 char randomLetter1 = ' ';
 char randomLetter2 = ' ';
@@ -108,7 +108,7 @@ switch (harflerIcınRastgeleSayi5)
         break;
 }
 
-int x11Rastgele = random2.Next(1, 4);
+int x11Rastgele = rnd.Next(1, 4);
 int x11 = 0;
 switch (x11Rastgele)
 {
@@ -123,7 +123,7 @@ switch (x11Rastgele)
         break;
 }
 
-int y11Rastgele = random3.Next(1, 4);
+int y11Rastgele = rnd.Next(1, 4);
 int y11 = 0;
 switch (y11Rastgele)
 {
@@ -138,37 +138,37 @@ switch (y11Rastgele)
         break;
 }
 
-int x12Rastgele = random2.Next(1, 4);
 int x12 = 0;
-switch (x12Rastgele)
-{
-    case 1:
-        x12 = 3;
-        break;
-    case 2:
-        x12 = 5;
-        break;
-    case 3:
-        x12 = 7;
-        break;
-}
+    int x12Rastgele = rnd.Next(1, 4);
+    switch (x12Rastgele)
+    {
+        case 1:
+            x12 = 3;
+            break;
+        case 2:
+            x12 = 5;
+            break;
+        case 3:
+            x12 = 7;
+            break;
+    }
 
-int y12Rastgele = random3.Next(1, 4);
 int y12 = 0;
+int y12Rastgele = rnd.Next(1, 4);
+
 switch (y12Rastgele)
 {
-    case 1:
-        y12 = 4;
-        break;
-    case 2:
-        y12 = 7;
-        break;
-    case 3:
-        y12 = 10;
-        break;
-}
-
-int x13Rastgele = random2.Next(1, 4);
+        case 1:
+            y12 = 4;
+            break;
+        case 2:
+            y12 = 7;
+            break;
+        case 3:
+            y12 = 10;
+            break;
+    }
+int x13Rastgele = rnd.Next(1, 4);
 int x13 = 0;
 switch (x13Rastgele)
 {
@@ -183,7 +183,7 @@ switch (x13Rastgele)
         break;
 }
 
-int y13Rastgele = random3.Next(1, 4);
+int y13Rastgele = rnd.Next(1, 4);
 int y13 = 0;
 switch (y13Rastgele)
 {
@@ -198,7 +198,7 @@ switch (y13Rastgele)
         break;
 }
 
-int x14Rastgele = random2.Next(1, 4);
+int x14Rastgele = rnd.Next(1, 4);
 int x14 = 0;
 switch (x14Rastgele)
 {
@@ -213,7 +213,7 @@ switch (x14Rastgele)
         break;
 }
 
-int y14Rastgele = random3.Next(1, 4);
+int y14Rastgele = rnd.Next(1, 4);
 int y14 = 0;
 switch (y14Rastgele)
 {
@@ -227,7 +227,7 @@ switch (y14Rastgele)
         y12 = 10;
         break;
 }
-int x15Rastgele = random2.Next(1, 4);
+int x15Rastgele = rnd.Next(1, 4);
 int x15 = 0;
 switch (x15Rastgele)
 {
@@ -242,7 +242,7 @@ switch (x15Rastgele)
         break;
 }
 
-int y15Rastgele = random3.Next(1, 4);
+int y15Rastgele = rnd.Next(1, 4);
 int y15 = 0;
 switch (y15Rastgele)
 {
@@ -520,11 +520,8 @@ if (sembolSayisiGirdisiDogru == 2)
                 Console.Write(randomLetter1);
             }
             else if (i == x12 && j == y12)
-            {
-                if(!(x12 == x11 && y12 == y11))
-                {
-                    Console.Write(randomLetter2);
-                }
+            {                
+                Console.Write(randomLetter2);                               
             }
             else if (i == 2 && j == 2 || (i == 2 && j == 12) || (i == 8 && j == 2) || (i == 8 && j == 12))
             {
@@ -607,14 +604,14 @@ if (sembolSayisiGirdisiDogru == 3)
             }
             else if (i == x12 && j == y12)
             {
-                while (!(x12 == x11 && y12 == y11))
+                if (!(x12 == x11 && y12 == y11))
                 {
                     Console.Write(randomLetter2);
                 }
             }
             else if (i == x13 && j == y13)
             {
-                while (!(x13 == x12 && y13 == y12) || x13 == x11 && y13 == y11)
+                if (!(x13 == x12 && y13 == y12) || x13 == x11 && y13 == y11)
                 {
                     Console.Write(randomLetter3);
                 }
@@ -700,21 +697,21 @@ if (sembolSayisiGirdisiDogru == 4)
             }
             else if (i == x12 && j == y12)
             {
-                while ((x11 == x12 && y11 == y12))
+                if ((x11 == x12 && y11 == y12))
                 {
                     Console.Write(randomLetter2);
                 }
             }
             else if (i == x13 && j == y13)
             {
-                while (((x12 == x13 && y12 == y13) || (x11 == x13 && y11 == y13)))
+                if (((x12 == x13 && y12 == y13) || (x11 == x13 && y11 == y13)))
                 {
                     Console.Write(randomLetter3);
                 }
             }
             else if (i == x14 && j == y14)
             {
-                while (((x14==x13 && y14 == y13) || (x14 == x12 && y14 == y12) || (x14 == x11 && y14 == y11)))
+                if (((x14==x13 && y14 == y13) || (x14 == x12 && y14 == y12) || (x14 == x11 && y14 == y11)))
                 {
                     Console.Write(randomLetter4);
                 }
@@ -800,31 +797,172 @@ if (sembolSayisiGirdisiDogru == 5)
             }
             else if (i == x12 && j == y12)
             {
-                while (!(x11 == x12 && y11 == y12))
+                do
                 {
-                    Console.Write(randomLetter2);
-                }
+                    if (!(x11 == x12 && y11 == y12))
+                    {
+                        Console.Write(randomLetter2);
+                    }
+                    else
+                    {
+                        x12Rastgele = rnd.Next(1, 4);
+                        x12 = 0;
+                        switch (x12Rastgele)
+                        {
+                            case 1:
+                                x12 = 3;
+                                break;
+                            case 2:
+                                x12 = 5;
+                                break;
+                            case 3:
+                                x12 = 7;
+                                break;
+                        }
+                        y12Rastgele = rnd.Next(1, 4);
+                        y12 = 0;
+                        switch (y12Rastgele)
+                        {
+                            case 1:
+                                y12 = 4;
+                                break;
+                            case 2:
+                                y12 = 7;
+                                break;
+                            case 3:
+                                y12 = 10;
+                                break;
+                        }
+                    }
+                } while ((x11 == x12 && y11 == y12));
+                Console.Write(randomLetter2);
             }
             else if (i == x13 && j == y13)
             {
-                while (!(x12 == x13 && y12 == y13) || (x11 == x13 && y11 == y13))
+                do
                 {
-                    Console.Write(randomLetter3);
-                }
+                    if (!(x12 == x13 && y12 == y13) || (x11 == x13 && y11 == y13))
+                    {
+                        Console.Write(randomLetter3);
+                    }
+                    else
+                    {
+                        x13Rastgele = rnd.Next(1, 4);
+                        x13 = 0;
+                        switch (x13Rastgele)
+                        {
+                            case 1:
+                                x13 = 3;
+                                break;
+                            case 2:
+                                x13 = 5;
+                                break;
+                            case 3:
+                                x13 = 7;
+                                break;
+                        }
+                        y13Rastgele = rnd.Next(1, 4);
+                        y13 = 0;
+                        switch (y13Rastgele)
+                        {
+                            case 1:
+                                y13 = 4;
+                                break;
+                            case 2:
+                                y13 = 7;
+                                break;
+                            case 3:
+                                y13 = 10;
+                                break;
+                        }
+                    }
+
+                } while ((x12 == x13 && y12 == y13) || (x11 == x13 && y11 == y13));
+                Console.Write(randomLetter3);
             }
             else if (i == x14 && j == y14)
             {
-                while (!(x14 == x13 && y14 == y13 || x14 == x12 && y14 == y12 || x14 == x11 && y14 == y11))
+                do
                 {
-                    Console.Write(randomLetter4);
-                }
+                    if (!(x14 == x13 && y14 == y13 || x14 == x12 && y14 == y12 || x14 == x11 && y14 == y11))
+                    {
+                        Console.Write(randomLetter4);
+                    }
+                    else
+                    {
+                        x14Rastgele = rnd.Next(1, 4);
+                        x14 = 0;
+                        switch (x14Rastgele)
+                        {
+                            case 1:
+                                x14 = 3;
+                                break;
+                            case 2:
+                                x14 = 5;
+                                break;
+                            case 3:
+                                x14 = 7;
+                                break;
+                        }
+                        y14Rastgele = rnd.Next(1, 4);
+                        y14 = 0;
+                        switch (y14Rastgele)
+                        {
+                            case 1:
+                                y14 = 4;
+                                break;
+                            case 2:
+                                y14 = 7;
+                                break;
+                            case 3:
+                                y14 = 10;
+                                break;
+                        }
+                    }
+                } while ((x14 == x13 && y14 == y13 || x14 == x12 && y14 == y12 || x14 == x11 && y14 == y11));
+                Console.Write(randomLetter4);
             }
             else if (i == x15 && j == y15)
             {
-                while (!(x15 == x14 && y15 == y14 || x15 == x13 && y15 == y13 || x15 == x12 && y15 == y12 || x15 == x11 && x15 == y11))
+                do
                 {
-                    Console.Write(randomLetter5);
-                }
+                    if (!(x15 == x14 && y15 == y14 || x15 == x13 && y15 == y13 || x15 == x12 && y15 == y12 || x15 == x11 && x15 == y11))
+                    {
+                        Console.Write(randomLetter5);
+                    }
+                    else
+                    {
+                        x15Rastgele = rnd.Next(1, 4);
+                        x15 = 0;
+                        switch (x15Rastgele)
+                        {
+                            case 1:
+                                x15 = 3;
+                                break;
+                            case 2:
+                                x15 = 5;
+                                break;
+                            case 3:
+                                x15 = 7;
+                                break;
+                        }
+                        y15Rastgele = rnd.Next(1, 4);
+                        y15 = 0;
+                        switch (y15Rastgele)
+                        {
+                            case 1:
+                                y15 = 4;
+                                break;
+                            case 2:
+                                y15 = 7;
+                                break;
+                            case 3:
+                                y15 = 10;
+                                break;
+                        }
+                    }
+                } while ((x15 == x14 && y15 == y14 || x15 == x13 && y15 == y13 || x15 == x12 && y15 == y12 || x15 == x11 && x15 == y11));
+                Console.Write(randomLetter5);
             }
             else if (i == 2 && j == 2 || (i == 2 && j == 12) || (i == 8 && j == 2) || (i == 8 && j == 12))
             {

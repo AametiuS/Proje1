@@ -13,3 +13,4 @@ D:\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.pdb
 D:\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.genruntimeconfig.cache
 D:\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ref\ConsoleApp1.dll
 D:\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleA.CB28C8CC.Up2Date
+D:\ConsoleApp1\ConsoleApp1\obj\Debug\net10.0\ConsoleApp1.sourcelink.json
